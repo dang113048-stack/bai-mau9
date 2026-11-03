@@ -1,0 +1,205 @@
+#include<iostream>
+using namespace Quan ly bai do xe;
+class phuong_tien{
+	private:
+		int ma_xe:
+		String loai_xe;
+		int gio_vao;
+		int tg_do;
+	public:
+		phuong_tien();
+		phuong_tien(int ma,string loai,int gio,int tg);
+		
+		int lay_ma_xe()const;
+		string lay_loai_xe const;
+		double tinh_phi(string loaixe,int giovao,int tgdo) {
+			int phi_1h
+			switch(loai_xe):
+			case"Bicycle":
+				phi_1h=2.00;
+				break;
+			case"Motocycle":
+				phi_1h=4.00;
+				break;
+			case"Car":
+				phi_1h=6.00;
+				break;
+			if((giovao>=6&&giovao<=9)||(giovao<=15&&giovao>=18)){
+				if(tgdo<=2) tongphi+=(tgdo*(0.3*phi_1h+phi_1h));
+				else tongphi+=(2*(0.3phi_1h+phi_1h));
+			}
+			else{
+				if(tgdo<=2) tongphi+=(tgdo*(phi_1h-0.05*phi_1h));
+				else tongphi+=(2*(phi_1h-0.05*phi_1h));
+			}
+			if(tgdo>2) tongphi+=(phi_1h-0.1*phi_1h)*(tgdo-2);
+			return tongphi;
+		}
+		void hien_thi(){
+			cout<<"Ma xe:"<<ma_xe<<"Loai xe:"<<loai_xe<<endl;
+		}
+};
+class bai_xe{
+	private:
+		int ma_bai;
+		char kich_thuoc;
+		phuong_tien pt1,pt2,pt3;
+		bool co1,co2,co3;
+	public:
+		voi setthas(){
+		}
+		bai_xe();
+		bai_xe(int ma,char kt){
+		      ma_bai=ma;
+		      kich_thuoc=kt;
+	}
+		int lay_ma() {return ma_bai};
+		bool them(phuongtien v){
+		int a=0;;
+		if(co1==true)a++;
+		if(co2==true)a++;
+		if(co3==true)a++;
+		
+		if(size="S"){
+			if(a>1) return false;
+			else{
+				if(co1==false){
+					co1==true;
+					pt1=v;
+				}
+			} return true;
+		}
+		else if(size="M"){
+			if(a>2) return false;
+			else{
+				if(co2==false){
+					co2==true;
+					pt2=v;
+			} return true;
+		}
+		else if(size="L"){
+			if(a>3) return false;
+			else{
+				if(co3==false){
+					co3==true;
+					pt3=v;
+			} return true;
+		}
+		else return false;
+		bool xoa(int ma_xe){
+			if(pt1.lay_ma_xe()!=ma_xe) return false;
+			else{
+			co1=false;
+			return true;
+		}
+			if(pt2.lay_ma_xe()!=ma_xe) return false;
+			else{
+			co2=false;
+			return true;
+		}
+			if(pt3.lay_ma_xe()!=ma_xe) return false;
+			else{
+			co3=false;
+			return true;
+		}
+	}
+		bool chua(int maxe){
+			if(pt1.lay_ma_xe()==maxe) return true;
+			else if(pt2.lay_ma_xe()==maxe) return true;
+			else if(pt3.lay_ma_xe()==maxe) return true;
+			else return false;
+		}
+		
+		void hien_thi(){
+			cout<<"Ma bai:"<<ma_bai<<"Kich thuoc:"<<kich_thuoc<<" Danh sach xe hien co:"<<endl;
+			if(co1==true) pt1.hien_thi();
+			if(co2==true) pt2.hien_thi();
+			if(co3==true) pt3.hien_thi();
+		}
+		bool co_loai(string loai,int*dem,double*tong){
+			*dem=0; *tong=0;
+			if(co1 && pt1.lay_loai_xe()==loai){
+				++dem;tong+=pt1.tinh_phi();
+			}
+			if(co1 && pt2.lay_loai_xe()==loai){
+				++dem;tong+=pt2.tinh_phi();
+			}
+			if(co1 && pt3.lay_loai_xe()==loai){
+				++dem;tong+=pt3.tinh_phi();
+			}
+			return *dem>0;
+		}
+};
+class SystemInterface::runMenu(){
+	int chon;
+	while(true)O
+	cout<<"\n=====QUAN LY BAI DO XE=====\n";
+	cout<<"1.Tao bai do\n";
+	cout<<"2.Them xe\n";
+	cout<<"3.Xoa bai do\n";
+	cout<<"4.Lay xe ra\n";
+	cout<<"5.Hien thi tat ca bai do\n";
+	cout<<"6.Hien thi xe theo bai\n";
+	cout<<"7.Liet ke xe theo bai\n";
+	cout<<"8.Bao cao phi trung binh\n";
+	cout<<"9.Thoat\n";
+	while(chon!=9){
+		cin>>chon;
+		switch(chon){
+		case 1:{
+			int ma;
+			char kt;
+			if(co1==false){
+				co1==true;
+				cout<<"Them thanh cong"<<endl;
+				bai1=new bai_xe(ma,kt);
+			}
+			else if(co2==false){
+				co2==true;
+				cout<<"Them thanh cong"<<endl;
+				bai2=new bai_xe(ma,kt);
+			}
+			else if(co3==false){
+				co3==true;
+				cout<<"Them thanh cong"<<endl;
+				bai3=new bai_xe(ma,kt);
+			}
+			else cout<<"Full bai"<<endl;
+			break;
+		}
+		case 2:{
+			int ma,gio,tg;
+			string loai;
+			phuong_tien v
+			if(bai1==true&&bai1.them(v)){
+				cout<<"Them thanh cong"<<endl;
+			}
+			break;
+		}
+		case 3:{
+			int ma;
+			cin>>ma;
+			if(co1==true&&bai1.lay_ma()==ma){
+				co1==false;
+				cout<<"Xoa thanh cong"<<endl;
+				bai1=new bai_xe();
+			}
+			if(co2==true&&bai2.lay_ma()==ma){
+				co2==false;
+				cout<<"Xoa thanh cong"<<endl;
+				bai2=new bai_xe();
+			}
+			if(co3==true&&bai3.lay_ma()==ma){
+				co3==false;
+				cout<<"Xoa thanh cong"<<endl;
+				bai3=new bai_xe();
+			}
+			else cout<<"Khong hop le"
+			break;
+		}
+		case 4:{
+			
+			break;
+		}
+	}
+
